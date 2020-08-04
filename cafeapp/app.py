@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+
 
 app = Flask(__name__)
 
@@ -8,17 +11,17 @@ def home():
 
 @app.route('/gallery')
 def gallery(): 
-    pass
+    return "Hello Gallery!"
 
 @app.route('/menu')
 def menu(): 
-    pass 
+    return "Hello Menus!"
 
-@app.route('/menu/<int: menu_id>')
+@app.route('/menu/<int:menu_id>')
 def singlemenu(menu_id): 
-    pass
+    return "Hello Menu!"
 
 @app.route('/location')
 def location(): 
-    pass 
+    return "Hello Location!"
 
