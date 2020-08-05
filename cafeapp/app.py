@@ -14,17 +14,17 @@ def home():
 
 @app.route('/gallery')
 def gallery(): 
-    return "Hello Gallery!"
+    return render_template("gallery.html")
 
 @app.route('/menu')
 def menu(): 
-    return "Hello Menus!"
+    return render_template("menus.html")
 
 @app.route('/menu/<int:menu_id>')
 def singlemenu(menu_id): 
-    return "Hello Menu!"
+    return render_template("menu.html")
 
-@app.route('/location')
+@app.route('/locations')
 def location(): 
-    return "Hello Location!"
+    return render_template("locations.html")
 
