@@ -4,49 +4,21 @@
 
   <div class="container mt-2">
     <div class="row">
+      {% for location in locations %}
       <div class="col-sm">
-
-        <!-- Card 1: Location 1 -->
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem">
           <div class="card-body">
-            <h5 class="card-title text-center">CITY 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-center">Official Location</h6>
+            <h5 class="card-title text-center">{{ location.city }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted text-center">{{ location.address }}</h6>
             <!-- Insert Image Here -->
-            <p class="card-text text-dark text-center">###-###-####</p>
+            <p class="card-text text-dark text-center">{{ location.number }}</p>
             <p class="card-text text-dark text-center">Hours</p>
+            <p class="card-text text-dark text-center">M-F: 8am - 11pm</p>
+            <p class="card-text text-dark text-center">Sat | Sun: 10am - 10pm</p>
           </div>
         </div>
-
       </div>
-      <div class="col-sm">
-        
-        <!-- Card 2: Location 2 -->
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title text-center">CITY 2</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-center">Official Location</h6>
-            <!-- Insert Image Here -->
-            <p class="card-text text-dark text-center">###-###-####</p>
-            <p class="card-text text-dark text-center">Hours</p>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-sm">
-
-        <!-- Card 3: Location 3 -->
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title text-center">CITY 3</h5>
-            <h6 class="card-subtitle mb-2 text-muted text-center">Official Location</h6>
-            <!-- Insert Image Here -->
-            <p class="card-text text-dark text-center">###-###-####</p>
-            <p class="card-text text-dark text-center">Hours</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
+      {% endfor %}
   </div>
     
     

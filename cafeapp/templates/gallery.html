@@ -4,18 +4,29 @@
 
     <!-- Images -->
     <div class="container mt-2">
+
+        <!-- Cafe Pictures -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
+            {% for image in cafeimages %}
+            <img src='static/CafeImgs/{{ image }}' class="d-block w-25 h-25" alt="cafe">
+            {% endfor %}
         </div>
+
+        <!-- Coffee Pictures -->
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
-            <img src="static/CoffImgs/coffee1.jpg" class="d-block w-25 h-25" alt="coffee2">
+            {% for image in coffeeimages %}
+            <img src='static/CoffImgs/{{ image }}' class="d-block w-25 h-25" alt="coffee">
+            {% endfor %}
         </div>
+
+        <!-- Cake Pictures -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            {% for image in cakeimages %}
+            <img src='static/CakeImgs/{{ image }}' class="d-block w-25 h-25" alt="cake">
+            {% endfor %}
+        </div>
+        
+        
     </div>
 
 {% endblock %}
