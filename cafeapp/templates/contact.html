@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container mx-auto mt-4">
+        <div class="row">
+            <!-- Column 1 -->
+            <div class="col-sm">
+                <h2 class="text-white text-uppercase font-weight-light">Contact Us!</h2>
+            </div>
+            <!-- Column 2-->
+            <div class="col-sm">
+                <!-- Contact Form -->
+                <form method="POST">
+                    {{ contactform.hidden_tag() }}
+                    <p>{{ contactform.name.label }}{{ contactform.name(size=40) }}</p>
+                    <p>{{ contactform.email.label }}{{ contactform.email(size=40) }}</p>
+                    <p>{{ contactform.subject.label }}{{ contactform.subject(size=40) }}</p>
+                    <p>{{ contactform.message.label }}{{ contactform.message() }}</p>
+                    <p>{{ contactform.submit() }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mx-auto mt-4">
+        <div class="row">
+            <!-- Column 1-->
+            <div class="col-sm">
+                <h2 class="text-white text-uppercase font-weight-light">Write a Review</h2>
+            </div>
+            <!-- Column 2 -->
+            <div class="col-sm">
+                <!-- Review Form -->
+                <form method="POST">
+                    {{ reviewform.hidden_tag() }}
+                    <p>{{ reviewform.name.label }}{{ reviewform.name(size=40) }}</p>
+                    <p>{{ reviewform.review.label }}{{ reviewform.review(size=40) }}</p>
+                    <p>{{ reviewform.submit() }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-4">
+        <div class="row">
+            <div class="col-sm">
+                <h2 class="text-white text-uppercase font-weight-light">Apply Today!</h2>
+            </div>
+            <div class="col-sm">
+                <!-- Application Form -->
+                <form method="POST">
+                    {{ applicationform.hidden_tag() }}
+                    <p>{{ applicationform.name.label }}{{ applicationform.name(size=40) }}</p>
+                    <p>{{ applicationform.number.label }}{{ applicationform.number(size=40) }}</p>
+                    <p>{{ applicationform.description.label }}{{ applicationform.description() }}</p>
+                    <p>{{ applicationform.submit() }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

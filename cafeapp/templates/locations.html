@@ -12,10 +12,10 @@
             <h6 class="card-subtitle mb-2 text-muted text-center">{{ location.address }}</h6>
             <!-- Insert Image Here -->
             <p class="card-text text-dark text-center">{{ location.number }}</p>
-            <p class="card-text text-dark text-center">Hours</p>
             <p class="card-text text-dark text-center">M-F: 8am - 11pm</p>
             <p class="card-text text-dark text-center">Sat | Sun: 10am - 10pm</p>
           </div>
+          <img class="card-img-bottom" src='{{ location.image }}' alt="Card image cap">
         </div>
       </div>
       {% endfor %}
