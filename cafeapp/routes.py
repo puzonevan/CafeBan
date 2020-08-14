@@ -126,3 +126,19 @@ def contact():
         applicationform=applicationform,
         reviewform=reviewform,
     )
+
+
+@app.route('/reviews')
+def reviews(): 
+    reviews = Review.query.all()
+    return render_template("reviews.html", reviews=reviews)
+
+@app.route('/contacts')
+def contacts(): 
+    contacts = Contact.query.all()
+    return render_template("contacts.html", contacts=contacts)
+
+@app.route('/applications')
+def applications(): 
+    applications = Application.query.all()
+    return render_template("applications.html", applications=applications)
