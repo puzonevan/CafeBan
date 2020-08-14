@@ -8,7 +8,19 @@ import os, sorts
 @app.route('/', methods=["GET", "POST"])
 @app.route('/home', methods=["GET", "POST"])
 def home(): 
-    return render_template("home.html")
+    bestphotos = [
+        'static/CoffImgs/coffee1-4.jpeg',
+        'static/CakeImgs/cake1-5.jpg',
+        'static/CafeImgs/cafeaesth1-1.jpg',
+        'static/CafeImgs/cafeaesth1-2.jpg'
+    ] 
+    bestreviews = Review.query.all()[1:4]
+
+
+    return render_template("home.html", 
+        photos = bestphotos, 
+        reviews = bestreviews,
+    )
 
 
 """ Gallery Route """

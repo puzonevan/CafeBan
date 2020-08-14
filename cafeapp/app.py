@@ -58,4 +58,6 @@ class Application(db.Model):
     description = db.Column(db.String(1000), unique = True, index = False)
 
 
+
+
 import routes 

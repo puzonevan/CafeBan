@@ -6,18 +6,20 @@
         <div class="row">
             <!-- Column 1 -->
             <div class="col-sm">
-                <h2 class="text-white text-uppercase font-weight-light">Contact Us!</h2>
+                <h2 class="text-white text-uppercase font-weight-light text-center">Contact Us!</h2>
+                <hr>
+                <p class="text-white text-center text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed massa augue. Cras velit sem, porttitor eget tincidunt ac, dictum eget est. Sed suscipit leo non nunc rutrum, nec faucibus nisi facilisis. Aenean dapibus, dui vel gravida maximus, odio massa porta risus, in molestie erat ex sed nisi. Aenean et ex mauris.</p>
             </div>
             <!-- Column 2-->
-            <div class="col-sm">
+            <div class="col-sm ">
                 <!-- Contact Form -->
                 <form method="POST">
                     {{ contactform.hidden_tag() }}
-                    <p>{{ contactform.name.label }}{{ contactform.name(size=40) }}</p>
-                    <p>{{ contactform.email.label }}{{ contactform.email(size=40) }}</p>
-                    <p>{{ contactform.subject.label }}{{ contactform.subject(size=40) }}</p>
-                    <p>{{ contactform.message.label }}{{ contactform.message() }}</p>
-                    <p>{{ contactform.submit() }}</p>
+                    <p class="text-white text-center">{{ contactform.name(size=40, placeholder="first name last name") }}</p>
+                    <p class="text-white text-center">{{ contactform.email(size=40, placeholder="email@email.com") }}</p>
+                    <p class="text-white text-center">{{ contactform.subject(size=40, placeholder="subject") }}</p>
+                    <p class="text-white text-center">{{ contactform.message(rows='5', cols='40', placeholder="message") }}</p>
+                    <p class="text-white text-center">{{ contactform.submit() }}</p>
                 </form>
             </div>
         </div>
@@ -27,16 +29,18 @@
         <div class="row">
             <!-- Column 1-->
             <div class="col-sm">
-                <h2 class="text-white text-uppercase font-weight-light">Write a Review</h2>
+                <h2 class="text-white text-uppercase font-weight-light text-center">Write a Review</h2>
+                <hr>
+                <p class="text-white text-center text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed massa augue. Cras velit sem, porttitor eget tincidunt ac, dictum eget est. Sed suscipit leo non nunc rutrum, nec faucibus nisi facilisis. Aenean dapibus, dui vel gravida maximus, odio massa porta risus, in molestie erat ex sed nisi. Aenean et ex mauris.</p>
             </div>
             <!-- Column 2 -->
             <div class="col-sm">
                 <!-- Review Form -->
                 <form method="POST">
                     {{ reviewform.hidden_tag() }}
-                    <p>{{ reviewform.name.label }}{{ reviewform.name(size=40) }}</p>
-                    <p>{{ reviewform.review.label }}{{ reviewform.review(size=40) }}</p>
-                    <p>{{ reviewform.submit() }}</p>
+                    <p class="text-white text-center">{{ reviewform.name(size=40, placeholder='first name last name') }}</p>
+                    <p class="text-white text-center">{{ reviewform.review(rows='5', cols='40', placeholder='insert review here ') }}</p>
+                    <p class="text-white text-center">{{ reviewform.submit() }}</p>
                 </form>
             </div>
         </div>
@@ -45,16 +49,18 @@
     <div class="container mx-auto mt-4">
         <div class="row">
             <div class="col-sm">
-                <h2 class="text-white text-uppercase font-weight-light">Apply Today!</h2>
+                <h2 class="text-white text-uppercase font-weight-light text-center">Apply Today!</h2>
+                <hr>
+                <p class="text-white text-center text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed massa augue. Cras velit sem, porttitor eget tincidunt ac, dictum eget est. Sed suscipit leo non nunc rutrum, nec faucibus nisi facilisis. Aenean dapibus, dui vel gravida maximus, odio massa porta risus, in molestie erat ex sed nisi. Aenean et ex mauris.</p>
             </div>
             <div class="col-sm">
                 <!-- Application Form -->
                 <form method="POST">
                     {{ applicationform.hidden_tag() }}
-                    <p>{{ applicationform.name.label }}{{ applicationform.name(size=40) }}</p>
-                    <p>{{ applicationform.number.label }}{{ applicationform.number(size=40) }}</p>
-                    <p>{{ applicationform.description.label }}{{ applicationform.description() }}</p>
-                    <p>{{ applicationform.submit() }}</p>
+                    <p class="text-white text-center">{{ applicationform.name(size=40, placeholder='first name last name') }}</p>
+                    <p class="text-white text-center">{{ applicationform.number(size=40, placeholder='###-###-####') }}</p>
+                    <p class="text-white text-center">{{ applicationform.description(rows='5', cols='40', placeholder='description') }}</p>
+                    <p class="text-white text-center">{{ applicationform.submit() }}</p>
                 </form>
             </div>
         </div>
