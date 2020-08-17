@@ -1,6 +1,50 @@
 {% extends "baseEmpty.html" %}
 
 {% block content %}
+    <!-- Page Title -->
+    <div class="container-fluid mt-4">
+        <h1 class="text-center text-uppercase font-weight-light text-white">Contacts</h1>  
+    </div>  
 
+    <!-- Information / Buttons -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="text-white text-uppercase text-center">Total Contacts: {{ totalcontacts }}</p>
+            </div>
+            <div class="col-sm">
+                <p class="text-white text-uppercase text-center">Last Received: Today</p>
+            </div>
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Filter
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Name</a>
+                      <a class="dropdown-item" href="#">Stars</a>
+                      <a class="dropdown-item" href="#">Favorites</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Cards -->
+    <div class="container w-100">
+        {% for contact in contacts %}
+        <div class="row">
+            <div class="col">
+                <div class="card mx-auto mt-4" style="width: 50rem;">
+                    <div class="card-body">
+                    <h5 class="card-title text-center">{{ contact.name }} - {{ contact.subject }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">{{ contact.email }}</h6>
+                    <p class="card-text">{{ contact.message }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

@@ -1,6 +1,50 @@
 {% extends "baseEmpty.html" %}
 
 {% block content %}
+    <!-- Page Title -->
+    <div class="container-fluid mt-4">
+        <h1 class="text-center text-uppercase font-weight-light text-white">Reviews</h1>  
+    </div>  
 
+    <!-- Information / Buttons -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="text-white text-uppercase text-center">Total Reviews: {{ totalreviews }}</p>
+            </div>
+            <div class="col-sm">
+                <p class="text-white text-uppercase text-center">Average Stars: 4.8</p>
+            </div>
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Filter 
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Name</a>
+                      <a class="dropdown-item" href="#">Stars</a>
+                      <a class="dropdown-item" href="#">Favorites</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="containter w-100">
+        {% for review in reviews %}
+        <div class="row">
+            <div class="col">
+                <div class="card mx-auto mt-4" style="width: 50rem;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">{{ review.name }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted text-center">*****</h6>
+                      <p class="card-text">{{ review.review }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

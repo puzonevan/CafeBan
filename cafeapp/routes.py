@@ -129,16 +129,26 @@ def contact():
 
 
 @app.route('/reviews')
-def reviews(): 
+def reviews():
     reviews = Review.query.all()
-    return render_template("reviews.html", reviews=reviews)
+    return render_template(
+        "reviews.html", 
+        reviews=reviews, totalreviews=len(reviews), 
+    )
 
 @app.route('/contacts')
 def contacts(): 
     contacts = Contact.query.all()
-    return render_template("contacts.html", contacts=contacts)
+    return render_template(
+        "contacts.html", 
+        contacts=contacts, totalcontacts=len(contacts), 
+    )
 
 @app.route('/applications')
 def applications(): 
     applications = Application.query.all()
-    return render_template("applications.html", applications=applications)
+    return render_template(
+        "applications.html", 
+        applications=applications, totalapplications=len(applications),
+    )
+
