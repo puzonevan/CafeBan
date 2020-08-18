@@ -152,3 +152,14 @@ def applications():
         applications=applications, totalapplications=len(applications),
     )
 
+@app.route('/sales')
+def sales(): 
+    return render_template("sales.html")
+
+@app.route('/staff')
+def staff(): 
+    return render_template("staff.html")
+
+@app.route('/inventory')
+def inventory(): 
+    return render_template("inventory.html")
