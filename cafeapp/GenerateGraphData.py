@@ -89,7 +89,6 @@ def generateInventoryWasteByProductId(id):
 
 
     
-    
 
 # generateDailySales()
 generateInventoryWasteByProductId(69)
