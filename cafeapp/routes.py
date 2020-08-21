@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from app import ContactForm, ReviewForm, ApplicationForm
 from app import Contact, Review, Application
 import os, sorts
+import GenerateGraphData as gd 
 
 """ Home Route """
 @app.route('/', methods=["GET", "POST"])
@@ -158,7 +159,15 @@ def sales():
 
 @app.route('/staff')
 def staff(): 
-    return render_template("staff.html")
+    allstaff = gd.generateAllStaff()
+    storemanagers = gd.generateStaffStoreManagers()
+    coffeewranglers = gd.generateStaffCoffeeWranglers()
+    roasters = gd.generateStaffRoasters()
+    
+    return render_template(
+        "staff.html",
+        staff = allstaff, managers = storemanagers, coffee = coffeewranglers, roasters = roasters
+    )
 
 @app.route('/inventory')
 def inventory(): 

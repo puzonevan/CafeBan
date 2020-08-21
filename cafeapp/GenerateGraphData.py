@@ -87,8 +87,64 @@ def generateInventoryWasteByProductId(id):
     shutil.move('MonthlyWasteLocation3{}.png'.format(id), './static/Graphs/MonthlyWaste')
     
 
+def generateAllStaff(): 
+    output = []
+    for index, row in staff.iterrows(): 
+        output.append(
+            {
+                'firstname': row['first_name'],
+                'lastname': row['last_name'], 
+                'position': row['position']
+            }
+        )
 
+    return output
+
+def generateStaffRoasters(): 
+    roasters = staff[staff.position == "Roaster"]
+    output = [] 
+
+    for index, row in roasters.iterrows(): 
+        output.append(
+            {
+                'firstname': row['first_name'],
+                'lastname': row['last_name'], 
+                'position': row['position'],
+            }
+        )
+
+    return output
+
+def generateStaffStoreManagers(): 
+    storemanagers = staff[staff.position == "Store Manager"]
+    output = [] 
+
+    for index, row in storemanagers.iterrows(): 
+        output.append(
+            {
+                'firstname': row['first_name'], 
+                'lastname': row['last_name'], 
+                'position': row['position'],
+            }
+        )
+    return output
+
+def generateStaffCoffeeWranglers(): 
+    coffeewranglers = staff[staff.position == "Coffee Wrangler"]
+    output = [] 
+
+    for index, row in coffeewranglers.iterrows(): 
+        output.append(
+            {
+                'firstname': row['first_name'],
+                'lastname': row['last_name'], 
+                'position': row['position'],
+            }
+        )
+
+    return output
     
 
 # generateDailySales()
-generateInventoryWasteByProductId(69)
+# generateInventoryWasteByProductId(69)
+# generateAllStaff()

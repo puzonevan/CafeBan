@@ -16,7 +16,7 @@
         <div class="col-sm d-flex justify-content-center">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-light active">
-                  <input type="radio" name="options" id="option1" checked> Roasters
+                  <input type="radio" name="options" id="option1"> Roasters
                 </label>
                 <label class="btn btn-light">
                   <input type="radio" name="options" id="option2"> Coffee Wrangler 
@@ -32,12 +32,19 @@
 <!-- List of Employees -->
 <div class="container">
     <ul class="list-group">
-        <!-- Insert For Loop here -->
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <!-- Changeable to different jobs -->
+        {% for person in staff %}
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-sm">
+              <p>{{ person.firstname }} {{ person.lastname }}</p>
+            </div>
+            <div class="col-sm">
+              <p class="text-right">{{ person.position }}</p>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
     </ul>
 </div>
 
