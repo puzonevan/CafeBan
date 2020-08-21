@@ -10,13 +10,25 @@ inventory = pd.read_csv('./data/pastry_inventory.csv')
 products = pd.read_csv('./data/product.csv')
 
 def generateDailySales(): 
-    sns.barplot(
+
+    """ Sales Plot """
+    salesplot = sns.barplot(
         data = sales, 
         x = 'transaction_date', 
         y = 'unit_price', 
-        estimator = sum 
+        estimator = sum,
+        ci = None
     )
-    plt.show()
+    # Labels 
+    salesplot.set(xlabel = "Date", ylabel="Sales")
+    salesplot.set_xticklabels(salesplot.get_xticklabels(), rotation = 90)
+    salesplot.set_title('Sales by Date')
+    # Save figure
+    fig = salesplot.get_figure()
+    fig.tight_layout()
+    fig.savefig("SalesByDate")
+    # Move to directory 
+    shutil.move("SalesByDate.png", './static/Graphs/DailySales')
 
 def generateInventoryWasteByProductId(id): 
 

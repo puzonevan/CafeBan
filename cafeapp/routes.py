@@ -155,7 +155,10 @@ def applications():
 
 @app.route('/sales')
 def sales(): 
-    return render_template("sales.html")
+
+    sales = os.listdir('./static/Graphs/DailySales')
+
+    return render_template("sales.html", sales = sales)
 
 @app.route('/staff')
 def staff(): 
