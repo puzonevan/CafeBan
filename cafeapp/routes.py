@@ -171,4 +171,7 @@ def staff():
 
 @app.route('/inventory')
 def inventory(): 
-    return render_template("inventory.html")
+
+    monthlywasteimages = sorts.bubbleSort(os.listdir('./static/Graphs/MonthlyWaste'))
+
+    return render_template("inventory.html", wasteimages = monthlywasteimages)

@@ -34,3 +34,35 @@ def merge(list1, list2):
         sortedlist += list2
 
     return sortedlist
+
+
+def insertionSort(arr):
+    
+    """ Runtime """ 
+    # Best Case: O(n^2)
+    # Worst Case: O(n^2)
+
+    for idx in range(1, len(arr)): 
+
+        currentindex = idx
+        previousindex = idx - 1
+
+        while arr[currentindex] < arr[previousindex] and previousindex >= 0: 
+            arr[currentindex], arr[previousindex] = arr[previousindex], arr[currentindex]
+            currentindex -= 1
+            previousindex -= 1
+    
+    return arr
+
+def bubbleSort(arr): 
+    
+    """ Runtime """ 
+    # Best Case: O(n^2)
+    # Worst Case: O(n^2)
+
+    for idx in range(len(arr) - 1): 
+        for pos in range(idx + 1, len(arr)): 
+            if arr[pos] < arr[idx]: 
+                arr[pos], arr[idx] = arr[idx], arr[pos]
+
+    return arr

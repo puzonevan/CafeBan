@@ -3,7 +3,17 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="text-uppercase text-white font-weight-light text-center">Inventory</h1>
+    <h1 class="text-uppercase text-white font-weight-light text-center">Inventory Waste</h1>
+</div>
+
+<div class="container-fluid">
+    {% for image in wasteimages %}
+    <div class="row">
+        <div class="col-sm mb-3">
+            <img src='static/Graphs/MonthlyWaste/{{ image }}' class="w-75 rounded mx-auto d-block" alt="graph">
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
 {% endblock %}

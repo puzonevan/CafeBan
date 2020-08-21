@@ -147,4 +147,7 @@ def generateStaffCoffeeWranglers():
 
 # generateDailySales()
 # generateInventoryWasteByProductId(69)
+# generateInventoryWasteByProductId(70)
+# generateInventoryWasteByProductId(71)
+# generateInventoryWasteByProductId(72)
 # generateAllStaff()
